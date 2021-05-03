@@ -20,11 +20,16 @@ public class RiverApplication {
 
 			Statement statement = connect.createStatement();
 
-			String st = "INSERT INTO revier VALUES(2,'GANGA',805.0,0,'KODAGU')";
+//			String st = "INSERT INTO revier VALUES(1,'GANGA',805.0,0,'KODAGU')";
+//			String st = "INSERT INTO river values(2,'Ganga',1,5,2525,'Gongotri')";
+//			String st = "INSERT INTO river values(3,'Kaveri',3,8,1620,'TalaKAveri')";
+//			String st = "INSERT INTO river values(4,'Krishna',0,10,1400,'Mahabaleshwar,')";
+			String st = "INSERT INTO river values(1,'Ghataprbha',4,2,283,'Western Ghats')";
 			
 			int executeUpdate = statement.executeUpdate(st);
 			
 			System.out.println("records : "+executeUpdate+" Added Successfull....");
+			connect.close();
 		} else {
 
 			System.out.println(" not connected--");
