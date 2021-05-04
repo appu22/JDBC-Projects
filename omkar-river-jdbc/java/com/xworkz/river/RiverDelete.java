@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.sql.Statement;
 
 public class RiverDelete {
 
@@ -14,14 +15,16 @@ public class RiverDelete {
 		String url="jdbc:mysql://localhost:3306/xworkz.db";
 		String un="root";
 		String pwd="root";
-
-		Connection connection = DriverManager.getConnection(url,un,pwd);//abstarction without knowing implentation
+		Connection connection = DriverManager.getConnection(url,un,pwd); 
+		
+		//abstarction without knowing implentation 
 		if(connection != null) {
+			Statement  statement = connection.createStatement();
 			String delete="delete from river where R_ID=2";
-			PreparedStatement prepareStatement = connection.prepareStatement(delete);
+			int executeUpdate = statement.executeUpdate(delete);
 			
-			System.out.println("Deleted Successfull...."+prepareStatement);
-//			connection.close();
+			System.out.println("Deleted Successfull...."+executeUpdate);
+			connection.close();
 		}else {
 			System.out.println("Connection not connnected ....");
 		}
