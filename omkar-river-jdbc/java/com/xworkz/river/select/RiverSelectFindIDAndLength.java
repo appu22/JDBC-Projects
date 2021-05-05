@@ -35,6 +35,7 @@ public class RiverSelectFindIDAndLength {
 
 			int LENGTH = resultset.getInt(2);
 			System.out.println("River Length --------> " + LENGTH);
+//			connection.close();
 
 		} else {
 			System.out.println("Connection Failed.....!");

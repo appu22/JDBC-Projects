@@ -28,7 +28,7 @@ public class RiverSelectQueryUsingAndOpeartor {
 //			System.out.println(resultset);
 
 			boolean next = resultset.next();
-			System.out.println("The Given Condition is : "+next);
+			System.out.println("The Given Condition is : " + next);
 
 			int id = resultset.getInt(1);
 			System.out.println("River ID --------> " + id);
@@ -36,7 +36,7 @@ public class RiverSelectQueryUsingAndOpeartor {
 			String riverName = resultset.getString(2);
 			System.out.println("River Name ------> " + riverName);
 
-			int polluted = resultset.getInt(3);
+			boolean polluted = resultset.getBoolean(3);
 			System.out.println("River Polluted---> " + polluted);
 
 			int dams = resultset.getInt(4);
@@ -47,6 +47,7 @@ public class RiverSelectQueryUsingAndOpeartor {
 
 			String origin = resultset.getString(6);
 			System.out.println("River Origin ----> " + origin);
+//			connection.close();
 
 		} else {
 			System.out.println("Connection Failed.....!");

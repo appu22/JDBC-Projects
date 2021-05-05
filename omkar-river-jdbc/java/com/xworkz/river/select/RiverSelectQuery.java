@@ -1,6 +1,7 @@
 package com.xworkz.river.select;
 
 import java.sql.Connection;
+
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -16,35 +17,33 @@ public class RiverSelectQuery {
 		String DRIVER = "com.mysql.cj.jdbc.Driver";
 
 		Class.forName(DRIVER);
-		Connection connection = DriverManager.getConnection(URL, USERNAME, PASSWORD); //interface
-		if (connection != null) {
-			Statement statement = connection.createStatement();  //interface
-				//abstraction --> connection,statement,ResultSet 
-			String select = "select * from river where R_NAME='Kaveri'";
-			ResultSet row = statement.executeQuery(select);  //interface
-			row.next(); //cursor pointing to the next column
-			int id = row.getInt(1);//starts with 1 
-			System.out.println("Show Row details --> " + id);
+		Connection connection = DriverManager.getConnection(URL, USERNAME, PASSWORD); // interface
 
-			String riverName = row.getString(2);
-			System.out.println("River Name---------> " + riverName);
+		Statement statement = connection.createStatement(); // interface
+		// abstraction --> connection,statement,ResultSet
+		String select = "select * from river where R_NAME='Kaveri'";
+		ResultSet row = statement.executeQuery(select); // interface
+		row.next(); // cursor pointing to the next column
+		int id = row.getInt(1);// starts with 1
+		System.out.println("Show Row details --> " + id);
 
-			int polluted = row.getInt(3);
-			System.out.println("River Polluted-----> " + polluted);
+		String riverName = row.getString(2);
+		System.out.println("River Name---------> " + riverName);
 
-			int dam = row.getInt(4);
-			System.out.println("River Dams --------> " + dam);
+		int polluted = row.getInt(3);
+		System.out.println("River Polluted-----> " + polluted);
 
-			int length = row.getInt(5);
-			System.out.println("River Length ------> " + length);
+		int dam = row.getInt(4);
+		System.out.println("River Dams --------> " + dam);
 
-			String origin = row.getString(6);
-			System.out.println("River Origin ------> " + origin);
+		int length = row.getInt(5);
+		System.out.println("River Length ------> " + length);
 
-			// connection.close();
-		} else {
-			System.out.println("Connection Failed .....!");
-		}
+		String origin = row.getString(6);
+		System.out.println("River Origin ------> " + origin);
+
+		connection.close();
+		System.out.println("closed............");
 
 	}
 }
