@@ -13,9 +13,9 @@ public class MatrimonyTester {
 
 		MatrimonyDTO dto = new MatrimonyDTO();
 		dto.setMid(7);
-		dto.setRegisterName("teerthKumar");
+		dto.setRegisterName("B");
 		dto.setGender(Gender.M);
-		dto.setLookingFor("girl");
+		dto.setLookingFor("SDd");
 		dto.setQualification("BE");
 		dto.setHabbits("cricket");
 
@@ -23,15 +23,15 @@ public class MatrimonyTester {
 //		dao.save(dto);
 
 //		MatrimonyDTO fetchByRegisterName = dao.fetchByRegisterName("teerthkumar");
-//		System.out.println("Main method   " + fetchByRegisterName);
+//		System.out.println("Teerthkumar Details by using RegName :  " + fetchByRegisterName);
 
-//		MatrimonyDTO fetchByID = dao.fetchByID(3);
-//		System.out.println(fetchByID);
-
+//		MatrimonyDTO fetchByID = dao.fetchByID(5);
+//		System.out.println("Fetching all details bu using ID : "+fetchByID);
+//
 //		dao.updateHabbitsByRegName("Reading", "Rakesh");
 
-//		MatrimonyDTO dto2 = dao.fetchByRegisterNameAndQualification("vishal", "BA");
-//		System.out.println(dto2);
+//		MatrimonyDTO dto2 = dao.fetchByRegisterNameAndQualification("ABC", "sdsd");
+//		System.out.println("Getting All details Of ABC using Name And Qualification : "+dto2);
 
 //		MatrimonyDTO fetchByIdAndGender = dao.fetchByIdAndGender(2, Gender.O);
 //		System.out.println("Displaying Using ID and Gender: "+fetchByIdAndGender);
@@ -40,18 +40,18 @@ public class MatrimonyTester {
 //		System.out.println("totalRow : " + totalRow);
 
 //		
-//		dao.deleteByRegNameAndGenderAndQualification("vishal", Gender.F, "BA");
+//		dao.deleteByRegNameAndGenderAndQualification("ADSSA", Gender.M, "BE");
 
 //		MatrimonyDTO fecthGenderAndRegName = dao.fecthGenderAndRegName(Gender.F, "xyz");
-//		System.out.println("Fcth Gender And RegName : " + fecthGenderAndRegName);
+//		System.out.println("Fecthing All details Using  Gender And RegName : " + fecthGenderAndRegName);
 
-		dao.updateQualifectionByRegNameAndDeleteByID("sdsd", "ABC", 6);
+//		dao.updateQualifectionByRegNameAndDeleteByID("M Tech", "A", 7);
 
-//		MatrimonyDTO fetchByIDAndUpdateQualificationByRegName = 
-//				dao.fetchByIDAndUpdateQualificationByRegName(6, "Agri","ABC");
-//
-//		System.out.println("fetchByIDAndUpdateQualificationByRegName : "
-//				+ "" + fetchByIDAndUpdateQualificationByRegName);
+		MatrimonyDTO fetchByIDAndUpdateQualificationByRegName = dao.fetchByIDAndUpdateQualificationByRegName(1, "Bsc",
+				"xyz");
+		System.out.println(
+				"Fetch By ID And Update Qualification By RegName :  " 
+		+ fetchByIDAndUpdateQualificationByRegName);
 
 	}
 

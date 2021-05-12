@@ -97,7 +97,7 @@ public class MatrimonyDAOImple implements MatrimonyDAO {
 			connection = DriverManager.getConnection(DBConstants.URL, DBConstants.USERNAME, DBConstants.PASSWORD);
 			String sql = "select * from matrimony where M_ID=? ";
 			PreparedStatement preparedStatement = connection.prepareStatement(sql);
-
+			preparedStatement.setInt(1, id);
 			boolean execute = preparedStatement.execute();
 			if (execute) {
 				System.out.println("Result Found.......!");
@@ -148,6 +148,8 @@ public class MatrimonyDAOImple implements MatrimonyDAO {
 			preparedStatement.setString(2, name);
 			boolean execute = preparedStatement.execute();
 			System.out.println("updated..");
+			System.out.println("Updated Habbits : " + habbit);
+			System.out.println("Reg Name : " + name);
 		} finally {
 			connection.close();
 			System.out.println("Connection Closed...");
@@ -162,9 +164,10 @@ public class MatrimonyDAOImple implements MatrimonyDAO {
 		try {
 			connection = DriverManager.getConnection(DBConstants.URL, DBConstants.USERNAME, DBConstants.PASSWORD);
 //			String update = "select M_REG_NAME=?,M_QUALIFICATION=? from  matrimony;";
-			String update = "select * from  matrimony where M_REG_NAME=? and M_QUALIFICATION=? ;";
 //			String sql = "select * from matrimony where M_REG_NAME=?";
 //			select M_REG_NAME='Kiran', M_QUALIFICATION='Msc CS'  from `xworkz.db`.matrimony;
+
+			String update = "select * from  matrimony where M_REG_NAME=? and M_QUALIFICATION=? ;";
 			PreparedStatement preparedStatement = connection.prepareStatement(update);
 			preparedStatement.setString(1, name);
 			preparedStatement.setString(2, qal);
@@ -365,7 +368,7 @@ public class MatrimonyDAOImple implements MatrimonyDAO {
 			prepareStatement.setString(1, qua);
 			prepareStatement.setString(2, regName);
 			boolean execute = prepareStatement.execute();
-			
+
 			String delete = "delete from matrimony where M_ID=? ";
 			PreparedStatement prepareStatement2 = connection.prepareStatement(delete);
 			prepareStatement2.setInt(1, deleteID);
@@ -399,9 +402,9 @@ public class MatrimonyDAOImple implements MatrimonyDAO {
 			prepareStatement2.setString(1, qua);
 			prepareStatement2.setString(2, regName);
 			boolean execute2 = prepareStatement2.execute();
-
+			System.out.println("Qualification Updated.."+qua);
 			if (execute) {
-				System.out.println("fetch,,,,");
+				System.out.println("Result found...");
 				ResultSet resultSet = prepareStatement.getResultSet();
 				resultSet.next();
 				int id1 = resultSet.getInt(1);
