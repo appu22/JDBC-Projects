@@ -17,4 +17,6 @@ update customer_order set CUSTOMER_ID=3 where customer_order_ID=4;
 select M_REG_NAME='Kiran', M_QUALIFICATION='Msc CS'  from `xworkz.db`.matrimony;
 delete from `xworkz.db`.matrimony where M_REG_NAME='' and M_GENDER='' and M_QUALIFICATION='' ;
 select count(M_ID) from `xworkz.db`.matrimony;
--- 
+
+
+
